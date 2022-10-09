@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script>
+        var myImage = new Image();
+        var x_move = -35;
+        var y_move = 0;
+
+        function displayImage() {
+            canvas = document.getElementById("myCanvas");
+            var size = myCanvas.width;
+            if (canvas.getContext) {
+                ctx = canvas.getContext("2d");
+                myImage.onload = function() {
+                ctx.drawImage(myImage, x_move, y_move, (myImage.width / (myImage.height / size)) , size );
+                ctx.strokeStyle = "white";
+                ctx.lineWidth = (size/2).toString();
+                ctx.beginPath();
+                ctx.arc(size/2, size/2, size*0.75, 0, Math.PI * 2, true);
+                ctx.closePath();
+                ctx.stroke();
+                }
+                myImage.src = "https://i1.wp.com/nypost.com/wp-content/uploads/sites/2/2016/09/astley1_index1a.jpg";
+
+            }
+        }
+    </script>
+</head>
+
+<body onload="displayImage()">
+  <canvas id="myCanvas" width="200" height="200">
+    </canvas>
+</body>
+
+</html>
