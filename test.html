@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <script type="text/javascript">
+          var myImage = new Image();
+          function displayImage() {
+              canvas = document.getElementById("myCanvas");
+              if (canvas.getContext) {
+                  ctx = canvas.getContext("2d");
+                  myImage.onload = function() {
+                      ctx.drawImage(myImage, 0, 0);
+                      ctx.strokeStyle = "white";
+                      ctx.lineWidth = "100";
+                      ctx.beginPath();
+                      ctx.arc(100, 100, 150, 0, Math.PI * 2, true);
+                      ctx.closePath();
+                      ctx.stroke();
+                  }
+                  myImage.src = "https://lh3.googleusercontent.com/jKGVlpNL92Ge8BMy5F_AIEyhvmDJWNlGHuYVlVkJZdAH2f4-cA6YLLr8fex9f4_CVG73aI9nV9knUeg=w544-h544-l90-rj";
+              }
+          }
+       </script>
+  </head>
+    <body onload="displayImage()">
+       <canvas id="myCanvas" width="200" height="200">
+    </canvas>
+      </body>
+</html>
