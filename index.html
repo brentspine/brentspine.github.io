@@ -1,36 +1,33 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/styles/bootstrap-custom.css">
+
+    <meta name="theme-color" content="#4285f4">
+    <meta name="color-schema" content="light dark">
+    <meta http-equiv="Cache-control" content="public">
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="/scripts/functions.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.5/croppie.css" integrity="sha512-2eMmukTZtvwlfQoG8ztapwAH5fXaQBzaMqdljLopRSA0i6YKM8kBAOrSSykxu9NN9HrtD45lIqfONLII2AFL/Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.5/croppie.js" integrity="sha512-vUJTqeDCu0MKkOhuI83/MEX5HSNPW+Lw46BA775bAWIp1Zwgz3qggia/t2EnSGB9GoS2Ln6npDmbJTdNhHy1Yw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
     <script>
-        var myImage = new Image();
-        var x_move = -35;
-        var y_move = 0;
-
-        function displayImage() {
-            canvas = document.getElementById("myCanvas");
-            var size = myCanvas.width;
-            if (canvas.getContext) {
-                ctx = canvas.getContext("2d");
-                myImage.onload = function() {
-                ctx.drawImage(myImage, x_move, y_move, (myImage.width / (myImage.height / size)) , size );
-                ctx.strokeStyle = "white";
-                ctx.lineWidth = (size/2).toString();
-                ctx.beginPath();
-                ctx.arc(size/2, size/2, size*0.75, 0, Math.PI * 2, true);
-                ctx.closePath();
-                ctx.stroke();
-                }
-                myImage.src = "https://i1.wp.com/nypost.com/wp-content/uploads/sites/2/2016/09/astley1_index1a.jpg";
-
-            }
-        }
+        var source = new EventSource("https://www.w3schools.com/html/demo_sse.php");
+        source.onmessage = function(event) {
+            document.getElementById("result").innerHTML += event.data + "<br>";
+        };
     </script>
 </head>
+<body>
+    <div id="result">
 
-<body onload="displayImage()">
-  <canvas id="myCanvas" width="200" height="200">
-    </canvas>
+    </div>
 </body>
-
 </html>
