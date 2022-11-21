@@ -1,28 +1,30 @@
 <!DOCTYPE html>
-<html>
-    <head>
-    <script type="text/javascript">
-          var myImage = new Image();
-          function displayImage() {
-              canvas = document.getElementById("myCanvas");
-              if (canvas.getContext) {
-                  ctx = canvas.getContext("2d");
-                  myImage.onload = function() {
-                      ctx.drawImage(myImage, 0, 0);
-                      ctx.strokeStyle = "white";
-                      ctx.lineWidth = "100";
-                      ctx.beginPath();
-                      ctx.arc(100, 100, 150, 0, Math.PI * 2, true);
-                      ctx.closePath();
-                      ctx.stroke();
-                  }
-                  myImage.src = "https://lh3.googleusercontent.com/jKGVlpNL92Ge8BMy5F_AIEyhvmDJWNlGHuYVlVkJZdAH2f4-cA6YLLr8fex9f4_CVG73aI9nV9knUeg=w544-h544-l90-rj";
-              }
-          }
-       </script>
-  </head>
-    <body onload="displayImage()">
-       <canvas id="myCanvas" width="200" height="200">
-    </canvas>
-      </body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
+
+    <meta name="theme-color" content="#4285f4">
+    <meta name="color-schema" content="light dark">
+    <meta http-equiv="Cache-control" content="public">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.5/croppie.css" integrity="sha512-2eMmukTZtvwlfQoG8ztapwAH5fXaQBzaMqdljLopRSA0i6YKM8kBAOrSSykxu9NN9HrtD45lIqfONLII2AFL/Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.5/croppie.js" integrity="sha512-vUJTqeDCu0MKkOhuI83/MEX5HSNPW+Lw46BA775bAWIp1Zwgz3qggia/t2EnSGB9GoS2Ln6npDmbJTdNhHy1Yw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+    <script>
+        var source = new EventSource("https://www.w3schools.com/html/demo_sse.php");
+        source.onmessage = function(event) {
+            document.getElementById("result").innerHTML += event.data + "<br>";
+        };
+    </script>
+</head>
+<body>
+    <div id="result">
+
+    </div>
+</body>
 </html>
