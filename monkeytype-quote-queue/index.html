@@ -26,6 +26,7 @@
       <tr>
         <th>Version</th>
         <th>Timestamp</th>
+        <th>Generate</th>
       </tr>
     </thead>
     <tbody>
@@ -39,8 +40,8 @@
     const latestRow = document.createElement('tr');
     const latestVersionCell = document.createElement('td');
     const latestTimestampCell = document.createElement('td');
-    latestVersionCell.textContent = data.versions.find(function(v) {v.version === data.latest}).version;
-    latestVersionCell.textContent = data.versions.find(function(v) {v.version === data.latest}).timestamp;
+    latestVersionCell.textContent = data.versions.find(function(v) {v.version == data.latest}).version;
+    latestVersionCell.textContent = data.versions.find(function(v) {v.version == data.latest}).timestamp;
     latestRow.appendChild(latestVersionCell);
     latestRow.appendChild(latestTimestampCell);
     tableBody.appendChild(latestRow);
