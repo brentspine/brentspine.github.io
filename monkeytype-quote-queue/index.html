@@ -72,7 +72,7 @@
             stargazers.forEach(stargazer => {
                 const stargazerDiv = document.createElement('div');
                 stargazerDiv.className = 'stargazer';
-                stargazerDiv.innerHTML = `<div style="display: flex; height: 50px; align-items: center; flex-wrap: wrap;"><img src="${stargazer.avatar_url}" style="height: 50px; border-radius: 100px; margin: 0 10px 0 15px;"> <a href="${stargazer.html_url}" target="_blank" style="text-decoration: none; font-size: 24px; color: black;">${stargazer.login}</a></div>`;
+                stargazerDiv.innerHTML = `<div style="display: flex; height: 50px; align-items: center; flex-wrap: wrap;"><img src="${stargazer.avatar_url}" style="height: 50px; border-radius: 100px; margin: 0 10px 0 15px;"> <a href="${stargazer.html_url}" target="_blank" style="text-decoration: none; font-size: 20px; color: black;">${stargazer.login}</a></div>`;
                 stargazersContainer.appendChild(stargazerDiv);
             });
         }
