@@ -55,7 +55,7 @@
       let xhr = new XMLHttpRequest();
       xhr.onload = function() {
           const script = document.createElement('script');
-          script.textContent = this.responseText.replaceAll('%version%', 'Latest (`+localStorage.getItem("latest")+`)');
+          script.textContent = this.responseText.replaceAll('{{version}}', 'Latest (`+localStorage.getItem("latest")+`)');
           document.head.appendChild(script);
       };
       const data = JSON.parse(this.responseText);
@@ -79,7 +79,7 @@
   let xhr = new XMLHttpRequest();
   xhr.onload = function() {
       const script = document.createElement('script');
-      script.textContent = this.responseText.replaceAll('%version%', '`+version+`');
+      script.textContent = this.responseText.replaceAll('{{version}}', '`+version+`');
       document.head.appendChild(script);
   };
   xhr.open('GET', 'https://brentspine.github.io/monkeytype-quote-queue/%version%.js');
