@@ -44,7 +44,7 @@
         // @name         MonkeyType Quote Tracker/Queue
         // @author       Brentspine
         // @description  Track completed quotes and try to complete all of them. Download updates at: https://github.com/brentspine/monkeytype-quote-queue
-        // @version		   latest
+        // @version      latest
         // @match        https://monkeytype.com/*
         // ==/UserScript==
         
@@ -58,54 +58,59 @@
         	};
         	const data = JSON.parse(this.responseText);
         	const latest = data.latest;
-        	xhr.open('GET', 'https://brentspine.github.io/monkeytype-quote-queue/'+latest+'.js');
+        	xhr.open('GET', 'https://brentspine.github.io/monkeytype-quote-queue/' + latest + '.js');
         	xhr.send();
         };
         vXhr.open('GET', 'https://brentspine.github.io/monkeytype-quote-queue/versions.json');
         vXhr.send();
       `;
+
       const staticScript = `
         // ==UserScript==
         // @name         MonkeyType Quote Tracker/Queue
         // @author       Brentspine
         // @description  Track completed quotes and try to complete all of them. Download updates at: https://github.com/brentspine/monkeytype-quote-queue
-        // @version		   %version%
+        // @version      %version%
         // @match        https://monkeytype.com/*
         // ==/UserScript==
       
         let xhr = new XMLHttpRequest();
         xhr.onload = function() {
-            const script = document.createElement(`script`);
+            const script = document.createElement('script');
             script.textContent = this.responseText;
             document.head.appendChild(script);
         };
         xhr.open('GET', 'https://brentspine.github.io/monkeytype-quote-queue/%version%.js');
         xhr.send();
       `;
-      
+
+      let generatedScript;
+      if (version === 'latest') {
+        generatedScript = latestScript;
+      } else {
+        generatedScript = staticScript.replace(/%version%/g, version);
+      }
+      alert(generatedScript);
     }
-    
+
     fetch('versions.json')
-  .then(response => response.json())
-  .then(data => {
-    const tableBody = document.querySelector('tbody');
-    data.versions.forEach(version => {
-      const row = document.createElement('tr');
-      const versionCell = document.createElement('td');
-      const timestampCell = document.createElement('td');
-      const generateCell = document.createElement('td');
-      versionCell.textContent = version.version;
-      if(version.timestamp > 0)
-        timestampCell.textContent = new Date(version.timestamp);
-      else
-        timestampCell.textContent = "?";
-      generateCell.innerHTML = `<a href="#" onclick="generateScript('`+version.version+`')">Generate</a>`;
-      row.appendChild(versionCell);
-      row.appendChild(timestampCell);
-      row.appendChild(generateCell);
-      tableBody.appendChild(row);
-    });
-  });
+      .then(response => response.json())
+      .then(data => {
+        const tableBody = document.querySelector('tbody');
+        data.versions.forEach(version => {
+          const row = document.createElement('tr');
+          const versionCell = document.createElement('td');
+          const timestampCell = document.createElement('td');
+          const generateCell = document.createElement('td');
+          versionCell.textContent = version.version;
+          timestampCell.textContent = version.timestamp > 0 ? new Date(version.timestamp).toLocaleString() : "?";
+          generateCell.innerHTML = `<a href="#" onclick="generateScript('${version.version}')">Generate</a>`;
+          row.appendChild(versionCell);
+          row.appendChild(timestampCell);
+          row.appendChild(generateCell);
+          tableBody.appendChild(row);
+        });
+      });
   </script>
 </body>
 </html>
