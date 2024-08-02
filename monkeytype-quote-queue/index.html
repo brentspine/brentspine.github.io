@@ -39,6 +39,46 @@
       </tr>
     </tbody>
   </table>
+  <h1>Thanks for your Stargazes!</h1>
+    <div id="stargazers" style="display: flex;"></div>
+
+    <script>
+        async function fetchStargazers() {
+            const username = 'brentspine'; 
+            const repo = 'monkeytype-quote-queue';
+            const url = `https://api.github.com/repos/${username}/${repo}/stargazers`;
+
+            try {
+                const response = await fetch(url, {
+                    headers: {
+                        'Accept': 'application/vnd.github.v3+json'
+                    }
+                });
+
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+
+                const stargazers = await response.json();
+                displayStargazers(stargazers);
+            } catch (error) {
+                console.error('Error fetching stargazers:', error);
+            }
+        }
+
+        function displayStargazers(stargazers) {
+            const stargazersContainer = document.getElementById('stargazers');
+
+            stargazers.forEach(stargazer => {
+                const stargazerDiv = document.createElement('div');
+                stargazerDiv.className = 'stargazer';
+                stargazerDiv.innerHTML = `<div style="display: flex; height: 100px; align-items: center;"><img src="${stargazer.avatar_url}"> <a href="${stargazer.html_url}" target="_blank">${stargazer.login}</a></div>`;
+                stargazersContainer.appendChild(stargazerDiv);
+            });
+        }
+
+        fetchStargazers();
+    </script>
   <div><a href="https://github.com/brentspine/monkeytype-quote-queue/">GitHub</a> Feel free to leave a Stargaze</div>
   <script>
     function generateScript(version) {
