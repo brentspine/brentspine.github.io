@@ -40,7 +40,7 @@
     </tbody>
   </table>
   <h1>Thanks for your Stargazes!</h1>
-    <div id="stargazers" style="display: flex;"></div>
+    <div id="stargazers" style="display: flex; flex-wrap: wrap;"></div>
 
     <script>
         async function fetchStargazers() {
@@ -60,7 +60,7 @@
                 }
 
                 const stargazers = await response.json();
-                displayStargazers(stargazers);
+                displayStargazers(stargazers.reverse());
             } catch (error) {
                 console.error('Error fetching stargazers:', error);
             }
@@ -72,14 +72,14 @@
             stargazers.forEach(stargazer => {
                 const stargazerDiv = document.createElement('div');
                 stargazerDiv.className = 'stargazer';
-                stargazerDiv.innerHTML = `<div style="display: flex; height: 50px; align-items: center; flex-wrap: wrap;"><img src="${stargazer.avatar_url}" style="height: 50px; border-radius: 100px; margin: 0 10px 0 15px;"> <a href="${stargazer.html_url}" target="_blank" style="text-decoration: none; font-size: 20px; color: black;">${stargazer.login}</a></div>`;
+                stargazerDiv.innerHTML = `<div style="display: flex; height: 50px; align-items: center;"><img src="${stargazer.avatar_url}" style="height: 50px; border-radius: 100px; margin: 0 10px 0 15px;"> <a href="${stargazer.html_url}" target="_blank" style="text-decoration: none; font-size: 20px; color: black;">${stargazer.login}</a></div>`;
                 stargazersContainer.appendChild(stargazerDiv);
             });
         }
 
         fetchStargazers();
     </script>
-  <div><a href="https://github.com/brentspine/monkeytype-quote-queue/">GitHub</a> Feel free to leave a Stargaze</div>
+  <div style="margin-top: 50px;"><a href="https://github.com/brentspine/monkeytype-quote-queue/">GitHub</a> Feel free to leave a Stargaze</div>
   <script>
     function generateScript(version) {
   const latestScript = `
