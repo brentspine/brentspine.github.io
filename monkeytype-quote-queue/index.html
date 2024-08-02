@@ -36,12 +36,23 @@
   .then(response => response.json())
   .then(data => {
     const tableBody = document.querySelector('tbody');
+    const latestRow = document.createElement('tr');
+    const latestVersionCell = document.createElement('td');
+    const latestTimestampCell = document.createElement('td');
+    latestVersionCell.textContent = data.versions.find(function(v) {v.version === data.latest}).version;
+    latestVersionCell.textContent = data.versions.find(function(v) {v.version === data.latest}).timestamp;
+    latestRow.appendChild(latestVersionCell);
+    latestRow.appendChild(latestTimestampCell);
+    tableBody.appendChild(latestRow);
     data.versions.forEach(version => {
       const row = document.createElement('tr');
       const versionCell = document.createElement('td');
       const timestampCell = document.createElement('td');
       versionCell.textContent = version.version;
-      timestampCell.textContent = version.timestamp; // You might want to format this
+      if(version.timestamp > 0)
+        timestampCell.textContent = new Date(version.timestamp);
+      else
+        timestampCell.textContent = "?";
       row.appendChild(versionCell);
       row.appendChild(timestampCell);
       tableBody.appendChild(row);
