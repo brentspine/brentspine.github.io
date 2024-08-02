@@ -37,14 +37,6 @@
   .then(response => response.json())
   .then(data => {
     const tableBody = document.querySelector('tbody');
-    const latestRow = document.createElement('tr');
-    const latestVersionCell = document.createElement('td');
-    const latestTimestampCell = document.createElement('td');
-    latestVersionCell.textContent = data.versions.find(function(v) {v.version == data.latest}).version;
-    latestVersionCell.textContent = data.versions.find(function(v) {v.version == data.latest}).timestamp;
-    latestRow.appendChild(latestVersionCell);
-    latestRow.appendChild(latestTimestampCell);
-    tableBody.appendChild(latestRow);
     data.versions.forEach(version => {
       const row = document.createElement('tr');
       const versionCell = document.createElement('td');
