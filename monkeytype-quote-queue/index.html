@@ -39,59 +39,93 @@
   </table>
   <script>
     function generateScript(version) {
-      const latestScript = `
-        // ==UserScript==
-        // @name         MonkeyType Quote Tracker/Queue
-        // @author       Brentspine
-        // @description  Track completed quotes and try to complete all of them. Download updates at: https://github.com/brentspine/monkeytype-quote-queue
-        // @version      latest
-        // @match        https://monkeytype.com/*
-        // ==/UserScript==
-        
-        let vXhr = new XMLHttpRequest();
-        vXhr.onload = function() {
-            let xhr = new XMLHttpRequest();
-        	xhr.onload = function() {
-        	    const script = document.createElement('script');
-        	    script.textContent = this.responseText;
-        	    document.head.appendChild(script);
-        	};
-        	const data = JSON.parse(this.responseText);
-        	const latest = data.latest;
-        	xhr.open('GET', 'https://brentspine.github.io/monkeytype-quote-queue/' + latest + '.js');
-        	xhr.send();
-        };
-        vXhr.open('GET', 'https://brentspine.github.io/monkeytype-quote-queue/versions.json');
-        vXhr.send();
-      `;
-
-      const staticScript = `
-        // ==UserScript==
-        // @name         MonkeyType Quote Tracker/Queue
-        // @author       Brentspine
-        // @description  Track completed quotes and try to complete all of them. Download updates at: https://github.com/brentspine/monkeytype-quote-queue
-        // @version      %version%
-        // @match        https://monkeytype.com/*
-        // ==/UserScript==
-      
+  const latestScript = `
+    // ==UserScript==
+    // @name         MonkeyType Quote Tracker/Queue
+    // @author       Brentspine
+    // @description  Track completed quotes and try to complete all of them. Download updates at: https://github.com/brentspine/monkeytype-quote-queue
+    // @version      latest
+    // @match        https://monkeytype.com/*
+    // ==/UserScript==
+    
+    let vXhr = new XMLHttpRequest();
+    vXhr.onload = function() {
         let xhr = new XMLHttpRequest();
         xhr.onload = function() {
             const script = document.createElement('script');
             script.textContent = this.responseText;
             document.head.appendChild(script);
         };
-        xhr.open('GET', 'https://brentspine.github.io/monkeytype-quote-queue/%version%.js');
+        const data = JSON.parse(this.responseText);
+        const latest = data.latest;
+        xhr.open('GET', 'https://brentspine.github.io/monkeytype-quote-queue/' + latest + '.js');
         xhr.send();
-      `;
+    };
+    vXhr.open('GET', 'https://brentspine.github.io/monkeytype-quote-queue/versions.json');
+    vXhr.send();
+  `;
 
-      let generatedScript;
-      if (version === 'latest') {
-        generatedScript = latestScript;
-      } else {
-        generatedScript = staticScript.replace(/%version%/g, version);
-      }
-      alert(generatedScript);
-    }
+  const staticScript = `
+    // ==UserScript==
+    // @name         MonkeyType Quote Tracker/Queue
+    // @author       Brentspine
+    // @description  Track completed quotes and try to complete all of them. Download updates at: https://github.com/brentspine/monkeytype-quote-queue
+    // @version      %version%
+    // @match        https://monkeytype.com/*
+    // ==/UserScript==
+  
+    let xhr = new XMLHttpRequest();
+    xhr.onload = function() {
+        const script = document.createElement('script');
+        script.textContent = this.responseText;
+        document.head.appendChild(script);
+    };
+    xhr.open('GET', 'https://brentspine.github.io/monkeytype-quote-queue/%version%.js');
+    xhr.send();
+  `;
+
+  let generatedScript = version === 'latest' ? latestScript : staticScript.replace(/%version%/g, version);
+
+  // Create the popup
+  let popup = document.createElement('div');
+  popup.style.position = 'fixed';
+  popup.style.left = '50%';
+  popup.style.top = '50%';
+  popup.style.transform = 'translate(-50%, -50%)';
+  popup.style.backgroundColor = '#fff';
+  popup.style.border = '1px solid #ddd';
+  popup.style.padding = '20px';
+  popup.style.boxShadow = '0px 0px 10px rgba(0, 0, 0, 0.1)';
+  popup.style.zIndex = 1000;
+
+  // Create the close button
+  let closeButton = document.createElement('button');
+  closeButton.textContent = 'Close';
+  closeButton.onclick = () => document.body.removeChild(popup);
+  popup.appendChild(closeButton);
+
+  // Create the copy button
+  let copyButton = document.createElement('button');
+  copyButton.textContent = 'Copy to Clipboard';
+  copyButton.style.marginLeft = '10px';
+  copyButton.onclick = () => {
+    navigator.clipboard.writeText(generatedScript).then(() => {
+      alert('Copied to clipboard');
+    });
+  };
+  popup.appendChild(copyButton);
+
+  // Create the textarea to display the script
+  let textArea = document.createElement('textarea');
+  textArea.value = generatedScript;
+  textArea.style.width = '100%';
+  textArea.style.height = '200px';
+  textArea.style.marginTop = '10px';
+  popup.appendChild(textArea);
+
+  document.body.appendChild(popup);
+}
+
 
     fetch('versions.json')
       .then(response => response.json())
