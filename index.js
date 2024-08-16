@@ -166,7 +166,7 @@ function section_1_animation_3() {
 
 function load_skills() {
     console.log("Loading skills");  
-    $.get("skill_section_template.php", function(template) {
+    $.get("skill_section_template.html", function(template) {
         console.log(template);
         $.get("skills.json", function(data) {
             skills = data.skills;
