@@ -1,0 +1,204 @@
+{
+    "amount": 7,
+    "levels": [
+        "Keine Erfahrung",
+        "Anfänger",
+        "Grundkenntnisse",
+        "Erweiterte Grundkenntnisse",
+        "Gute Kenntnisse",
+        "Erfahren",
+        "Fortgeschritten",
+        "Experte"
+    ],
+    "skills": [
+        {
+            "name": "HTML5",
+            "icon": "./images/html5_512_512.png",
+            "level": "Gute Kenntnisse",
+            "sort": 95,
+            "description": "Backend Entwickler haben den Ruf keine Ahnung von Design und HTML zu haben. Ich persönlich kann mich zurecht finden, es ist aber nicht meine Stärke. Ich kann HTML5 und CSS3, aber ich bin kein Designer.",
+            "bottom_links": [
+                {
+                    "name": "Wikipedia",
+                    "url": "https://de.wikipedia.org/wiki/HTML5"
+                },
+                {
+                    "name": "See more",
+                    "url": "./skills/html5"
+                }
+            ]
+        },
+        {
+            "name": "SQL",
+            "icon": "./images/sql_243_300.png",
+            "level": "Gute Kenntnisse",
+            "sort": 110,
+            "description": "Ich habe in fast allen Projekten mit Datenbanken gearbeitet. Diese waren meistens MySQL oder SQLite. Diese wurden in Zusammenhang mit PHP, Java oder Python verwendet.",
+            "bottom_links": [
+                {
+                    "name": "Wikipedia",
+                    "url": "https://de.wikipedia.org/wiki/SQL"
+                },
+                {
+                    "name": "See more",
+                    "url": "./skills/sql"
+                }
+            ]
+        },
+        {
+            "name": "Symfony",
+            "icon": "./images/symfony_563_678.png",
+            "level": "Grundkenntnisse",
+            "sort": 99,
+            "description": "Symfony ist ein PHP Framework, welches ich seit 2022 in meiner Freizeit lerne. Es verwendet MySQL + Doctrine für die Datenbank und Twig für das Frontend. Das Framework ist jedoch sehr umfangreich und lässt viele Möglichkeiten offen.",
+            "bottom_links": [
+                {
+                    "name": "Wikipedia",
+                    "url": "https://de.wikipedia.org/wiki/Symfony"
+                },
+                {
+                    "name": "Symfony Webseite",
+                    "url": "https://symfony.com/"
+                },
+                {
+                    "name": "See more",
+                    "url": "./skills/symfony"
+                }
+            ]
+        },
+        {
+            "name": "Doctrine",
+            "icon": "./images/doctrine_227_300.png",
+            "level": "Erweiterte Grundkenntnisse",
+            "sort": 98,
+            "description": "Doctrine ist eine Datenbankabstraktionsschicht, die überwiegend in Symfony verwendet wird. Doctrine erlaubt es Objekte aus der Datenbank wie Klassen zu behandeln. Eine gute Erklärung finden sie auf Wikipedia oder der offiziellen Webseite.",
+            "bottom_links": [
+                {
+                    "name": "Wikipedia",
+                    "url": "https://de.wikipedia.org/wiki/Doctrine_(Software)"
+                },
+                {
+                    "name": "Doctrine Webseite",
+                    "url": "https://www.doctrine-project.org/"
+                },
+                {
+                    "name": "See more",
+                    "url": "./skills/doctrine"
+                }
+            ]
+        },
+        {
+            "name": "Python",
+            "icon": "./images/python_300_300.png",
+            "level": "Gute Kenntnisse",
+            "sort": 101,
+            "description": "Python habe ich meistens für kleine Projekte verwendet, da die Sprache und Syntax sehr einfach sind. Zu den Anwendungsgebieten gehören Webscraping und andere kleine Automationen und Tools.",
+            "bottom_links": [
+                {
+                    "name": "Wikipedia",
+                    "url": "https://de.wikipedia.org/wiki/Python_(Programmiersprache)"
+                },
+                {
+                    "name": "See more",
+                    "url": "./skills/python"
+                }
+            ]
+        },
+        {
+            "name": "Git",
+            "icon": "./images/git_300_300.png",
+            "level": "Grundkenntnisse",
+            "sort": 100,
+            "description": "Dadurch, dass ich meistens alleine oder höchstens in einer Gruppe von 3 gearbeitet habe, kenne ich mich nur mit den Grundlagen von Git aus. Unten finden Sie einen Link zu meinem GitHub Profil. Sie können sich gerne meine Repositories ansehen.",
+            "bottom_links": [
+                {
+                    "name": "Wikipedia",
+                    "url": "https://de.wikipedia.org/wiki/Git"
+                },
+                {
+                    "name": "GitHub",
+                    "url": "https://brentspine.de/r/github",
+                    "icon": "./images/github_300_300.png",
+                    "add_name": false,
+                    "icon_height": "26px",
+                    "icon_width": "26px",
+                    "image_wrapper": "image-wrapper-contain"
+                },
+                {
+                    "name": "See more",
+                    "url": "./skills/git"
+                }
+            ]
+        },
+        {
+            "name": "PHP",
+            "icon": "./images/php_573_300.png",
+            "level": "Erfahren",
+            "sort": 150,
+            "description": "Ich habe mich das erste mal mit PHP in meinem Praktikum bei Topcon befasst. Seitdem benutze ich die Sprache für das Backend aller meiner Projekte. Mittlerweile lerne ich die Library Symfony, ein Link mit mehr Informationen finden Sie unten.",
+            "bottom_links": [
+                {
+                    "name": "Wikipedia",
+                    "url": "https://de.wikipedia.org/wiki/PHP"
+                },
+                {
+                    "name": "Symfony",
+                    "url": "https://symfony.com/",
+                    "icon": "./images/symfony_563_678.png",
+                    "add_name": false,
+                    "icon_height": "32px",
+                    "icon_width": "32px",
+                    "image_wrapper": "image-wrapper-contain"
+                },
+                {
+                    "name": "See more",
+                    "url": "./skills/php"
+                }
+            ]
+        },
+        {
+            "name": "Java",
+            "icon": "./images/java_350_350.png",
+            "level": "Erweiterte Grundkenntnisse",
+            "sort": 11,
+            "description": "Java war die erste Programmiersprache, die ich gelernt habe. Dies war zu Corona Zeiten, als ich mich entschieden habe, Programmieren zu lernen. Dies war um eigene Projekte, wie das erstellen von Modifikationen in Spielen, zu realisieren. Einige dieser Projekte finden Sie auf meinem GitHub Profil. Ein Beispiel Repository finden Sie unten.",
+            "bottom_links": [
+                {
+                    "name": "Wikipedia",
+                    "url": "https://de.wikipedia.org/wiki/Java_(Programmiersprache)"
+                },
+                {
+                    "name": "GitHub Repo",
+                    "url": "https://brentspine.de/r/fstrhrdcrrdm",
+                    "icon": "./images/github_300_300.png",
+                    "add_name": true,
+                    "icon_height": "26px",
+                    "icon_width": "26px",
+                    "image_wrapper": "image-wrapper-contain"
+                },
+                {
+                    "name": "See more",
+                    "url": "./skills/java"
+                }
+            ]
+        },
+        {
+            "name": "JQuery",
+            "icon": "./images/jquery_512_512.png",
+            "level": "Erfahren",
+            "sort": -100,
+            "description": "jQuery wird oft als veraltet betrachtet, da es in den meisten Fällen inzwischen überflüssig geworden ist. Dennoch habe ich es häufig für Automatisierungen, wie beispielsweise UserScripts, eingesetzt, da es meiner Meinung nach einige Aufgaben vereinfacht. Dadurch habe ich umfangreiche Erfahrung mit dieser Bibliothek gesammelt.",
+            "bottom_links": [
+                {
+                    "name": "Wikipedia",
+                    "url": "https://de.wikipedia.org/wiki/JQuery"
+                },
+                {
+                    "name": "See more",
+                    "url": "./skills/jquery"
+                }
+            ],
+            "hidden": true
+        }
+    ]
+}

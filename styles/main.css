@@ -1,0 +1,919 @@
+html {
+    scroll-behavior: smooth;
+}
+.hidden {
+    display: none;
+}
+
+.nolink {
+    color: var(--color-standard-white);
+    text-decoration: none;
+}
+
+.nolink:hover {
+    color: var(--color-standard-white);
+}
+#header {
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    height: 100px;
+    justify-content: center;
+    align-items: center;
+    width: 95vw;
+    z-index: 100;
+}
+.header-link {
+    margin: 0 20px;
+    color: var(--color-header-text);
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.header-link.active {
+    color: var(--color-header-active);
+}
+.flex-fill {
+    flex: 1;
+}
+body {
+    background-color: var(--color-section-background);
+    margin: 0;
+    padding: 0;
+}
+.section {
+    height: 100vh;
+    width: 100%;
+    background-color: var(--color-section-background);
+}
+#section-1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+#section-1 .text {
+    color: var(--color-section-text);
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-left: 6vw;
+}
+#section-1 .text .title {
+    font-weight: 800;
+    font-size: 70px;
+    color: var(--color-section-highlight);
+    margin-right: 10px;
+    line-height: 80%;
+    margin-bottom: 10px;
+    width: min-content;
+    line-height: 1.2;
+}
+#section-1 .text .text-append {
+    font-weight: 500;
+    font-size: 22px;
+    padding-left: 5px;
+    margin-top: 10px;
+}
+#section-1 .text .button {
+    padding-left: 5px;
+    margin-top: 15px;
+}
+#section-1 .image {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 6vw;
+}
+.image-wrapper-contain,
+.image-wrapper {
+    position: relative;
+    width: 400px;
+    height: 400px;
+}
+.image-wrapper > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* This ensures the image maintains its aspect ratio */
+}
+.image-wrapper-contain > img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* This ensures the image maintains its aspect ratio */
+}
+#section-1 .image .gradient {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 99%;
+    /*background: radial-gradient(ellipse at center, rgba(40, 48, 70, 0) 15%, rgba(40, 48, 70, 0.1) 50%, rgba(40, 48, 70, 1) 100%);*/
+}
+.typing-animation {
+    animation: typewriter-color-section-highlight .75s step-end infinite;
+    border-right: .10em solid black;
+    line-height: 90%;
+}
+#section-1 .scroll-notice {
+    position: absolute;
+    bottom: 0;
+    color: var(--color-section-secondary);
+    font-size: 18px;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 20px;
+}
+#section-1 .scroll-notice .scroll-notice-arrow {
+    font-size: 30px;
+    margin-top: 2px;
+}
+
+/* Make the scroll notice float up and down non-linear */
+@keyframes scroll-notice-float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(10px); }
+}
+#section-1 .scroll-notice {
+    animation: scroll-notice-float 3s infinite;
+}
+
+
+
+#section-2 {
+    background-color: var(--color-section-background);
+    height: unset;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 100px;
+}
+#section-2 .border-decoration {
+    width: 100%;
+    height: 3px;
+    position: absolute;
+    display: flex;
+}
+#section-2 .border-decoration-wrapper {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 10% 25% 30% 25% 10%;
+}
+#section-2 .border-decoration .colored {
+    background-color: var(--color-section-highlight);
+    height: 100%;
+}
+#section-2 .wrapper .title {
+    color: var(--color-section-text);
+    font-size: 44px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+#section-2 .wrapper .text {
+    color: var(--color-section-text);
+    font-size: 17px;
+}
+#section-2 .wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    height: 80%;
+    max-width: 1100px;
+    margin: 0 0;
+}
+#section-2 .wrapper .text-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+#section-2 .wrapper .line {
+    height: 0;
+    min-width: 55px;
+    margin: 8px 14px 0 14px;
+    border: 2px solid var(--color-section-highlight);
+}
+
+
+
+#section-skill {
+    background-color: var(--color-section-background);
+    height: unset;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#section-skill .title {
+    color: var(--color-section-text);
+    font-size: 44px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+#section-skill {
+    background-color: var(--color-section-background);
+    height: unset;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#section-skill .title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+#section-skill .skill-grid-wrapper {
+    width: max-content;
+    display: flex;
+    justify-content: center;
+    max-width: 97vw;
+    width: 100%;
+}
+  
+#section-skill .skill-grid {
+    display:flex;
+    flex-flow: row wrap;
+    justify-content:center;
+    align-content:center;
+    align-items:center;
+    width: 100%;
+    padding: 0 1rem;
+    max-width: 1250px;
+    /* This applies the font family to all skill boxes, as well as the skill-panel */
+    font-family: "Roboto", sans-serif;
+}
+  
+#section-skill .skill-box {
+    background-color: #f2f2f2;
+    padding: 1rem;
+    border-radius: 5px;
+    text-align: center;
+    background-color: var(--color-section-card-background);
+    color: white;
+    flex: 0 1 auto;
+    align-self:center;
+    width: 20vw;
+    margin: 10px;
+    max-width: 260px;
+    font-family: "Roboto", sans-serif;
+    cursor: pointer;
+}
+
+#section-skill .skill-box.extended {
+    min-width: 100%!important;
+    transition: width 0.3s ease-in-out;
+}
+
+@media screen and (max-width: 850px) {
+    #section-skill .skill-level {
+        font-size: 0.75rem;
+    }
+    #section-skill .skill-title {
+        font-size: 0.9rem;
+    }
+    #section-skill .skill-icon {
+        margin-bottom: 0.3rem;
+        width: 25%;
+        height: 25%;
+    }
+}
+
+
+@media screen and (max-width: 560px) {
+    #section-skill .skill-box {
+        width: 30vw;
+        margin: 8px;
+    }
+}
+@media screen and (max-width: 380px) {
+    #section-skill .skill-box {
+        width: 60vw;
+    }
+    #section-skill .skill-level {
+        font-size: 1rem;
+    }
+    #section-skill .skill-title {
+        font-size: 1.15rem;
+    }
+
+}
+@media screen and (max-width: 292px) {
+    #section-skill .skill-box {
+        width: 60vw;
+    }
+    #section-skill .skill-level {
+        font-size: 0.9rem;
+    }
+    #section-skill .skill-title {
+        font-size: 1rem;
+    }
+}
+
+#section-skill .skill-box.active {
+    box-shadow: 0 4px 13px -4px var(--color-highlight-green);
+    transition: 0.2s;
+}
+#section-skill .skill-box:hover:not(.active) {
+    box-shadow: 0 4px 13px -4px #7367f0;
+    transition: 0.2s;
+}
+#section-skill .skill {
+    /* This is da squareee */
+    aspect-ratio: 1 / 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+#section-skill .skill-box.extended .skill {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 150px;
+}
+
+#section-skill .skill-icon {
+    margin-bottom: 0.5rem;
+    width: 35%;
+    height: 35%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#section-skill .skill-icon img {
+    max-width: 100%;
+    max-height: 100%;
+}
+  
+#section-skill .skill-title {
+    font-weight: bold;
+}
+#section-skill .skill-level {
+    color: var(--color-section-secondary);
+    letter-spacing: 0.5px;
+    font-weight: 600;
+    font-size: 0.82rem;
+}
+
+
+@media screen and (max-width: 1379px) {
+    #section-1 .image {
+        margin-right: 0vw;
+    }
+    #section-1 .text {
+        margin-left: 0vw;
+    }
+}
+@media screen and (max-width: 1059px) {
+    .image-wrapper {
+        width: 300px;
+        height: 300px;
+    }
+}
+@media screen and (max-width: 970px) {
+    #section-1 .text .title {
+        font-size: 50px;
+    }
+    #section-1 .text .text-append {
+        font-size: 17px;
+    }
+}
+
+@media screen and (max-width: 970px) {
+    #section-1 .text .title {
+        font-size: 50px;
+    }
+    #section-1 .text .text-append {
+        font-size: 17px;
+    }
+}
+@media screen and (max-width: 760px) {
+    .image-wrapper {
+        width: 200px;
+        height: 200px;
+    }
+    #section-1 .text .title {
+        font-size: 40px;
+    }
+    #section-1 .text .text-append {
+        font-size: 15px;
+    }
+    #section-2 .wrapper .title {
+        font-size: 35px;
+    }
+    #section-2 .wrapper .line {
+        height: 0;
+        min-width: 40px;
+        margin: 8px 14px 0 14px;
+        border: 2px solid var(--color-section-highlight);
+    }
+}
+
+/* PHONE */
+@media screen and (max-width: 605px) {
+    #section-1 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        justify-items: center;
+        align-items: center;
+    }
+    #section-1 .image {
+        width: 70vw;
+        height: auto;
+        margin-top: 35px;
+    }
+    .image-wrapper {
+        width: 70vw;
+        /*height: auto;*/
+    }
+    .image-wrapper > img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain; /* This ensures the image maintains its aspect ratio */
+    }
+    #section-1 .text {
+        width: 70vw;
+        margin-left: 0;
+    }
+    #section-1 .text .title {
+        font-size: 3.125rem;
+    }
+    #section-1 .text .text-append {
+        font-size: 1.25rem;
+    }
+    #section-2 .wrapper {
+        width: 88%;
+        width: 88%;
+    }
+    #section-2 .wrapper .line {
+        height: 0;
+        min-width: 30px;
+        margin: 8px 10px 0 10px;
+        border: 2px solid var(--color-section-highlight);
+    }
+    #section-2 .wrapper .text {
+        font-size: 0.9rem;
+    }
+    #section-2 .wrapper .title {
+        font-size: 30px;
+    } 
+    #section-1 .scroll-notice-text {
+        font-size: 13px;
+    }
+}
+
+
+@media screen and (max-width: 400px) {
+    #section-1 .image {
+        margin-top: 25px;
+    }
+    .image-wrapper > img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain; /* This ensures the image maintains its aspect ratio */
+    }
+    #section-1 .text {
+        width: 70vw;
+        margin-left: 0;
+        justify-content: center;
+    }
+    #section-1 .text .title {
+        font-size: 2.75rem;
+    }
+    #section-1 .text .text-append {
+        font-size: 1rem;
+    }
+    #section-1 .button {
+        display: flex;
+        justify-content: center;
+    }
+}
+@media screen and (max-width: 300px) {
+    #section-1 .image {
+        margin-top: 20px;
+    }
+    .image-wrapper > img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain; /* This ensures the image maintains its aspect ratio */
+    }
+    #section-1 .text {
+        width: 100vw;
+        margin-left: 0;
+    }
+    #section-1 .text .title {
+        font-size: 2.2rem;
+    }
+    #section-1 .text .text-append {
+        font-size: 0.78rem;
+    }
+}
+
+
+@keyframes typewriter-color-section-text {
+    from, to { border-color: transparent; }
+    50% { border-color: var(--color-section-text); }
+}
+
+@keyframes typewriter-color-section-highlight {
+    from, to { border-color: transparent; }
+    50% { border-color: var(--color-section-highlight); }
+}
+
+
+button.non-background-button {
+    background-color: transparent;
+    border: 3px solid var(--color-section-highlight);
+    color: var(--color-section-highlight);
+    border-radius: 7px;
+    padding: 10px;
+    font-size: 16px;
+    margin-top: 5px;
+}
+button.non-background-button:hover {
+    box-shadow: 0 4px 13px -4px #7367f0;
+    transition: 0.2s;
+}
+
+button:not(:disabled) {
+    cursor: pointer;
+}
+
+.roboto-thin {
+    font-family: "Roboto", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+}
+
+.roboto-light {
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.roboto-regular {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.roboto-medium {
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.roboto-bold {
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.roboto-black {
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+}
+
+.roboto-thin-italic {
+    font-family: "Roboto", sans-serif;
+    font-weight: 100;
+    font-style: italic;
+}
+
+.roboto-light-italic {
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-style: italic;
+}
+
+.roboto-regular-italic {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.roboto-medium-italic {
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-style: italic;
+    }
+
+.roboto-bold-italic {
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-style: italic;
+}
+
+.roboto-black-italic {
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    font-style: italic;
+}
+
+.skill-panel {
+    width: 100%;
+    background-color: var(--color-section-card-background);
+    padding: 0 1rem;
+    box-sizing: border-box;
+    margin-top: 0rem;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.skill-panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    color: var(--color-section-highlight);	
+}
+.skill-panel-header div {
+    width: 33%;
+    display: flex;
+    justify-content: center;
+}
+.skill-panel-header div:first-child {
+    justify-content: flex-start;
+    color: var(--color-section-secondary);
+    height: 65px;
+    display: flex;
+    align-items: center;
+}
+.skill-panel-header div:last-child {
+    justify-content: flex-end;
+    font-size: 1.4rem;
+    font-weight: 600;
+    cursor: pointer;
+    color: var(--color-section-secondary);
+}
+.skill-panel-title {
+    font-size: 1.7rem;
+    font-weight: 600;
+    margin-top: 0.6rem;
+}
+.skill-panel-body {
+    color: var(--color-section-secondary);
+    font-size: 1rem;
+    padding: 0 2rem;
+}
+.skill-panel-body .description {
+    margin-top: 0.7rem;
+    text-align: center;
+}
+.skill-panel-footer {
+    width: 100%;
+    padding: 0 0 1rem 0;
+}
+.skill-panel-footer .links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+    width: 100%;
+}
+.skill-panel-footer .links a {
+    color: #6161e2;
+    opacity: 1;
+    text-decoration: none;
+}
+
+#skill-notification {
+    position: absolute;
+    text-align: center;
+    color: white;
+    font-size: 14px;
+    padding: 5px; /* Optional: Padding for the text background */
+    border-radius: 5px; /* Optional: Rounded corners for the text background */
+    display: flex;
+    color: var(--color-section-text);
+}
+#skill-notification .image-wrapper-contain {
+    width: 50px;
+    height: 50px;
+}
+
+#skill-notification img {
+    transform: rotate(18deg); /* Adjust based on the arrow direction */
+}
+#skill-notification span {
+    padding: 7px 0 0px 15px; text-align: start;
+}
+#skill-notification .all {
+    display: block;
+}
+#skill-notification .phone {
+    display: none;
+}
+
+@media screen and (max-width: 650px) {
+    #skill-notification {
+        font-size: 12px;
+    }   
+    #skill-notification .image-wrapper-contain {
+        width: 40px;
+        height: 40px;
+    }
+    #skill-notification span {
+        padding: 0px 0 0px 10px; text-align: start;
+    }
+}
+
+@media screen and (max-width: 520px) {
+    #skill-notification {
+        font-size: 9px;
+    }   
+    #skill-notification .image-wrapper-contain {
+        width: 30px;
+        height: 30px;
+    }
+    #skill-grid .skill-panel-body {
+        padding: 0 1rem;
+        font-size: 14px;
+    }
+}
+@media screen and (max-width: 490px) {
+    #skill-notification .all {
+        display: none;
+    }
+    #skill-notification .phone {
+        display: block;
+    }
+    #skill-notification span {
+        padding: 5px 0 0px 7px; text-align: start;
+    }
+    #skill-notification .image-wrapper-contain {
+        width: 26px;
+        height: 26px;
+    }
+}
+@media screen and (max-width: 440px) {
+    #skill-notification .all {
+        display: none;
+    }
+    #skill-notification .phone {
+        display: block;
+    }
+    #skill-notification span {
+        padding: 5px 0 0px 7px; text-align: start;
+    }
+    #skill-notification .image-wrapper-contain {
+        width: 22px;
+        height: 22px;
+    }
+}
+
+
+#section-contact {
+    min-height: 20vh;
+    margin-top: 50px;
+}
+#section-contact .header,
+#section-contact .footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#section-contact .footer {
+    background: linear-gradient(to bottom, var(--color-section-card-background) 76%, rgba(0, 0, 0, 0) 50%);
+}
+#section-contact .header {
+    background: linear-gradient(to top, var(--color-section-card-background) 40%, rgba(0, 0, 0, 0) 50%);
+}
+
+#section-contact .footer .line,
+#section-contact .header .line {
+    min-width: 55px;
+    height: 0;
+    border: 1.2px solid var(--color-section-highlight);
+}
+#section-contact .footer .line:first-child,
+#section-contact .header .line:first-child {
+    margin: 8px 14px 0 12px;
+}
+#section-contact .footer .line:last-child,
+#section-contact .header .line:last-child {
+    margin: 8px 12px 0 14px;
+}
+
+#section-contact .header .title {
+    font-size: 32px;
+    font-weight: 600;
+    color: var(--color-section-text);
+    margin: 15px 8px;
+}
+#section-contact .content {
+    background-color: var(--color-section-card-background);
+    height: 10vh;
+}
+#section-contact .footer .links {
+    display: flex;
+}
+#section-contact .footer .image-wrapper-contain {
+    width: 24px;
+    height: 24px;
+    margin: 0 10px;
+}
+
+@media screen and (max-width: 605px) {
+    #section-contact .header .title {
+        font-size: 25px;
+    }
+}
+@media screen and (max-width: 445px) {
+    #section-contact .header .title {
+        margin: 15px 0;
+    }
+}
+@media screen and (max-width: 380px) {
+    #section-contact .header .title {
+        font-size: 20px;
+    }
+    #section-contact .footer .image-wrapper-contain {
+        width: 18px;
+        height: 18px;
+    }
+    #section-contact .line {
+        min-width: 40px;
+    }
+}
+@media screen and (max-width: 320px) {
+    #section-contact .header .title {
+        font-size: 16px;
+    }
+    #section-contact .footer .image-wrapper-contain {
+        width: 16px;
+        height: 16px;
+    }
+    #section-contact .line {
+        min-width: 35px;
+    }
+}
+
+
+#section-footer {
+    background-color: var(--color-section-background);
+    height: 20vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+#section-footer .thanks {
+    color: var(--color-section-highlight);
+    font-size: max(1.5rem, 2vw);
+    font-weight: 600;
+    margin-top: 10px;
+}
+#section-footer .bottom {
+    color: var(--color-header-text);
+    display: flex;
+    justify-content: space-around;
+    align-self: center;
+    width: 100%;
+    font-size: 12px;
+    margin: 0vh 0 4px 0;
+}
+#section-footer .bottom div {
+    display: flex;
+    align-items: flex-end;
+    /*justify-content: center;*/
+    width: 33%;
+    margin: 10px;
+}
+#section-footer .bottom .heart {
+    color: red
+}
+/* Das war eigentlich erst ab 1000px; On second thought, sieht das hier aber trotzdem besser aus. Bleibt jetzt auf 5000000px weil ja */
+@media screen and (max-width: 5000000px) {
+    #section-footer .bottom div {
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        width: 33%;
+    }
+    #section-footer .bottom div:first-child {
+        margin-left: 25px;
+        justify-content: flex-start;
+    }
+    #section-footer .bottom div:last-child {
+        margin-right: 25px;
+        justify-content: flex-end;
+    }
+}
+@media screen and (max-width: 440px) {
+    #section-footer .thanks {
+        font-size: 5vw;
+    }
+    #section-footer .bottom {
+        font-size: 10px;
+    }
+}
