@@ -4,6 +4,9 @@ html {
 .hidden {
     display: none;
 }
+.pointer {
+    cursor: pointer;
+}
 
 .nolink {
     color: var(--color-standard-white);
@@ -651,7 +654,6 @@ button:not(:disabled) {
     justify-content: flex-end;
     font-size: 1.4rem;
     font-weight: 600;
-    cursor: pointer;
     color: var(--color-section-secondary);
 }
 .skill-panel-title {
@@ -776,6 +778,7 @@ button:not(:disabled) {
     margin-top: 50px;
 }
 #section-contact .header,
+#section-contact .content,
 #section-contact .footer {
     display: flex;
     align-items: center;
@@ -783,9 +786,11 @@ button:not(:disabled) {
 }
 #section-contact .footer {
     background: linear-gradient(to bottom, var(--color-section-card-background) 76%, rgba(0, 0, 0, 0) 50%);
+    /*padding-top: 25px;*/
 }
 #section-contact .header {
     background: linear-gradient(to top, var(--color-section-card-background) 40%, rgba(0, 0, 0, 0) 50%);
+    /*padding-bottom: 15px;*/
 }
 
 #section-contact .footer .line,
@@ -811,7 +816,7 @@ button:not(:disabled) {
 }
 #section-contact .content {
     background-color: var(--color-section-card-background);
-    height: 10vh;
+    padding: 15px 0 20px 0;
 }
 #section-contact .footer .links {
     display: flex;
@@ -915,5 +920,59 @@ button:not(:disabled) {
     }
     #section-footer .bottom {
         font-size: 10px;
+    }
+}
+
+#section-contact .contact-grid {
+    display:flex;
+    justify-content:center;
+    align-content:center;
+    align-items:center;
+    width: 100%;
+    max-width: 1250px;
+    /* This applies the font family to all skill boxes, as well as the skill-panel */
+    font-family: "Roboto", sans-serif;
+    flex-wrap: wrap;
+}
+#section-contact .contact-grid-item a {
+    flex: 0 1 auto;
+    display: flex;
+    align-items: center;
+}
+#section-contact .contact-grid-item {
+    padding: 0.7rem 1rem;
+    border-radius: 5px;
+    text-align: center;
+    background-color: var(--color-section-background);
+    color: white;
+    
+    align-self:center;
+    width: 260px;
+    margin: 5px 10px;
+    max-width: 260px;
+    font-family: "Roboto", sans-serif;
+    cursor: pointer;
+    
+    font-size: 18px;
+}
+#section-contact .contact-grid-item .text {
+    flex: 1;
+}
+#section-contact .contact-grid-item .icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 0px;
+}
+#section-contact .contact-grid-item:hover {
+    box-shadow: 0 2px 6px -2px #7367f0;
+    transition: 0.2s;
+}
+#section-contact .contact-grid-item img {
+    width: 20px;
+    height: 20px;
+}
+@media screen and (max-width: 2000px) {
+    #section-contact .contact-grid {
+        max-width: 930px;
     }
 }
