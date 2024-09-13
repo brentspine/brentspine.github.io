@@ -330,13 +330,16 @@ document.addEventListener("DOMContentLoaded", async function (event) {
 			localStorage.setItem("bqp_latest_completion_amount", 0);
 		
 		if(localStorage.getItem("bqp_data") == undefined) {
+			await waitForAnyState(MonkeyStates.IDLE);
 			await resetData();
 			setTimeout(function() {
 				nextQuote();
-			}, 6000);
+			}, 100);
 		} else {
+			await waitForAnyState(MonkeyStates.IDLE);
 			await refetchResults();
-			setTimeout(function() {
+			setTimeout(async function() {
+				await waitForAnyState(MonkeyStates.IDLE);
 				nextQuote();
 			}, 1000);
 		}
@@ -434,6 +437,19 @@ function getMonkeyState() {
     return MonkeyStates.LOADING;
 }
 
+async function waitForAnyState(desiredStates, checkInterval = 100) {
+    return new Promise(resolve => {
+	const checkState = () => {
+	    if (!desiredStates.includes(getMonkeyState())) {
+			setTimeout(checkState, checkInterval);
+	    } else {
+			resolve();
+	    }
+	};
+	checkState();
+    });
+}
+
 function getStyleOfObjectAsFloat(object, styleType) {
     if (object && object.style) {
         const style = parseFloat(object.style[styleType]);
@@ -492,7 +508,7 @@ async function resetData() {
     localStorage.setItem("bqp_latest_completion_amount", 0);
     await fetchQuotes();
     // Necessary?
-    await delay(5000);
+    //await delay(5000);
     await refetchResults();
 }
 
