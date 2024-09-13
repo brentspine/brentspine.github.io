@@ -340,6 +340,15 @@ document.addEventListener("DOMContentLoaded", async function (event) {
 				nextQuote();
 			}, 1000);
 		}
+
+	    setInterval(function() {
+	    	const oldLang = localStorage.getItem("selected_lang");
+	    	const newLang = getSelectedLanguage();
+	    	if(oldLang !== newLang) {
+		     localStorage.setItem("selected_lang", newLang);
+		     nextQuote();
+		}
+	    }, 500);
 			
 		
 		
