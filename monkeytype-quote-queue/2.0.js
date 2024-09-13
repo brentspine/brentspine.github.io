@@ -6,7 +6,7 @@ const MonkeyStates = Object.freeze({
     IDLE: "Idling",
     TYPING: "Typing Test",
     RESULT: "Test Result",
-		LOGIN: "Login Page"
+    LOGIN: "Login Page"
 });
 
 const MonkeyLanguages = Object.freeze({
@@ -570,7 +570,7 @@ async function fetchQuotes() {
 			Object.keys(MonkeyLanguages).forEach(async function(lang, index, array) {
 				 const response = await fetch("https://monkeytype.com/quotes/"+lang.toString().toLowerCase()+".json");
 				 if(response.status > 299) {
-		      	alert(`Encountered a ${response.status} error while fetching quotes for language "${lang}"`);
+		      	// alert(`Encountered a ${response.status} error while fetching quotes for language "${lang}"`);
 		      	return;
 		      }
 				  const data = await response.json();
