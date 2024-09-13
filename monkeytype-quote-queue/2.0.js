@@ -343,7 +343,7 @@ document.addEventListener("DOMContentLoaded", async function (event) {
 
 	    setInterval(function() {
 	    	const oldLang = localStorage.getItem("selected_lang");
-	    	const newLang = getSelectedLanguage();
+	    	const newLang = getMonkeyMode().language;
 	    	if(oldLang !== newLang) {
 		     localStorage.setItem("selected_lang", newLang);
 		     nextQuote();
