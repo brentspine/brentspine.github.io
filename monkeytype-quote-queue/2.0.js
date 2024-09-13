@@ -342,12 +342,12 @@ document.addEventListener("DOMContentLoaded", async function (event) {
 		}
 
 	    setInterval(function() {
-	    	const oldLang = localStorage.getItem("selected_lang");
+	    	const oldLang = localStorage.getItem("bqp_selected_lang");
 	    	const newLang = getMonkeyMode().language;
-	    	if(oldLang !== newLang) {
-		     localStorage.setItem("selected_lang", newLang);
-		     nextQuote();
-		}
+	    	if(oldLang != newLang) {
+		     localStorage.setItem("bqp_selected_lang", newLang);
+				 nextQuote();
+				}
 	    }, 500);
 			
 		
