@@ -83,48 +83,48 @@
   <script>
     function generateScript(version) {
   const latestScript = `
-  // ==UserScript==
-  // @name         MonkeyType Quote Tracker/Queue
-  // @author       Brentspine
-  // @description  Track completed quotes and try to complete all of them. Download updates at: https://github.com/brentspine/monkeytype-quote-queue
-  // @version      latest
-  // @match        https://monkeytype.com/*
-  // ==/UserScript==
-    
-  let vXhr = new XMLHttpRequest();
-  vXhr.onload = function() {
-      let xhr = new XMLHttpRequest();
-      xhr.onload = function() {
-          const script = document.createElement('script');
-          script.textContent = this.responseText.replaceAll('{{version}}', 'Latest (`+localStorage.getItem("latest")+`)');
-          document.head.appendChild(script);
-      };
-      const data = JSON.parse(this.responseText);
-      const latest = data.latest;
-      xhr.open('GET', 'https://brentspine.github.io/monkeytype-quote-queue/' + latest + '.js');
-      xhr.send();
-  };
-  vXhr.open('GET', 'https://brentspine.github.io/monkeytype-quote-queue/versions.json');
-  vXhr.send();
+// ==UserScript==
+// @name         MonkeyType Quote Tracker/Queue
+// @author       Brentspine
+// @description  Track completed quotes and try to complete all of them. Download updates at: https://github.com/brentspine/monkeytype-quote-queue
+// @version      latest
+// @match        https://monkeytype.com/*
+// ==/UserScript==
+  
+let vXhr = new XMLHttpRequest();
+vXhr.onload = function() {
+    let xhr = new XMLHttpRequest();
+    xhr.onload = function() {
+        const script = document.createElement('script');
+        script.textContent = this.responseText;
+        document.head.appendChild(script);
+    };
+    const data = JSON.parse(this.responseText);
+    const latest = data.latest;
+    xhr.open('GET', 'https://brentspine.github.io/monkeytype-quote-queue/' + latest + '.js');
+    xhr.send();
+};
+vXhr.open('GET', 'https://brentspine.github.io/monkeytype-quote-queue/versions.json');
+vXhr.send();
   `;
 
   const staticScript = `
-  // ==UserScript==
-  // @name         MonkeyType Quote Tracker/Queue
-  // @author       Brentspine
-  // @description  Track completed quotes and try to complete all of them. Download updates at: https://github.com/brentspine/monkeytype-quote-queue
-  // @version      %version%
-  // @match        https://monkeytype.com/*
-  // ==/UserScript==
-  
-  let xhr = new XMLHttpRequest();
-  xhr.onload = function() {
-      const script = document.createElement('script');
-      script.textContent = this.responseText.replaceAll('{{version}}', '`+version+`');
-      document.head.appendChild(script);
-  };
-  xhr.open('GET', 'https://brentspine.github.io/monkeytype-quote-queue/%version%.js');
-  xhr.send();
+// ==UserScript==
+// @name         MonkeyType Quote Tracker/Queue
+// @author       Brentspine
+// @description  Track completed quotes and try to complete all of them. Download updates at: https://github.com/brentspine/monkeytype-quote-queue
+// @version      %version%
+// @match        https://monkeytype.com/*
+// ==/UserScript==
+
+let xhr = new XMLHttpRequest();
+xhr.onload = function() {
+    const script = document.createElement('script');
+    script.textContent = this.responseText;
+    document.head.appendChild(script);
+};
+xhr.open('GET', 'https://brentspine.github.io/monkeytype-quote-queue/%version%.js');
+xhr.send();
   `;
 
   let generatedScript = version === 'latest' ? latestScript : staticScript.replace(/%version%/g, version);
