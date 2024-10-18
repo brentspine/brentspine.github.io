@@ -1,6 +1,10 @@
 {
   "versions": [
     {
+      "version": "3.1",
+      "timestamp": 0
+    },
+    {
       "version": "3.0",
       "timestamp": 0
     },
@@ -81,7 +85,7 @@
       "timestamp": 0
     }
   ],
-  "latest": "2.0.5",
-  "dev": "2.0.5",
-  "extension": "3.0"
+  "latest": "3.1",
+  "dev": "3.1",
+  "extension": "3.1"
 }
