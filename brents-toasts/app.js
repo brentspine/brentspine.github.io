@@ -95,7 +95,7 @@ function showOneToast() {
 function showFiveToasts() {
   let i = 0;
   while (i < 5) {
-    showOneToast();
+    setTimeout(showOneToast, i);
     i += 1;
   }
 }
