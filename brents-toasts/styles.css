@@ -15,6 +15,7 @@
 
 *{ box-sizing: border-box; }
 html,body{ height: 100%; }
+
 body{
   margin: 0;
   font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
@@ -33,6 +34,7 @@ body{
   font-size: 22px;
   letter-spacing: 0.2px;
 }
+
 .sub{
   margin: 8px 0 0;
   color: var(--muted);
@@ -69,7 +71,6 @@ select{
 }
 
 textarea{ resize: vertical; min-height: 70px; }
-
 select{ padding: 10px 8px; }
 
 input[type="color"]{
@@ -128,9 +129,32 @@ button.ghost{
   border: 1px solid #3a3a3a;
 }
 
-button.ghost:hover{
-  border-color: #555;
+button.ghost:hover{ border-color: #555; }
+
+.code{
+  margin-top: 18px;
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
 }
+
+.code-head{
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.code-box{
+  margin: 0;
+  padding: 12px;
+  border: 1px solid #3a3a3a;
+  border-radius: 4px;
+  background: var(--input);
+  overflow: auto;
+  line-height: 1.45;
+}
+
+.muted{ color: var(--muted); font-size: 13px; }
 
 .mono{
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
