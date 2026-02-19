@@ -1,1 +1,10 @@
-
+{
+  "playlists": {
+    "main-content": {
+      "games": {
+        "https://www.geoguessr.com/de/vgp/3007": false
+      }
+    }
+  },
+  "standardPlaylistKey": "main-content"
+}
