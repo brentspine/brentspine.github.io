@@ -2,7 +2,29 @@
   "playlists": {
     "main-content": {
       "games": {
-        "https://www.geoguessr.com/de/vgp/3007": false
+        "https://www.geoguessr.com/de/vgp/3007": false,
+        "https://www.geoguessr.com/de/vgp/3007?gamemode=pin": false,
+        "https://www.geoguessr.com/de/fl/2010?gamemode=pin": false,
+        "https://www.geoguessr.com/de/vgp/3225?gamemode=pin": false,
+        "https://www.geoguessr.com/de/vgp/3015?gamemode=pin": false,
+        "https://www.geoguessr.com/de/fl/2015?gamemode=pin": false,
+        "https://www.geoguessr.com/de/vgp/3079?gamemode=pin": false,
+        "https://www.geoguessr.com/de/vgp/3016?gamemode=pin": false,
+        "https://www.geoguessr.com/de/fl/2004?gamemode=pin": false,
+        "https://www.geoguessr.com/de/vgp/3017?gamemode=pin": false,
+        "https://www.geoguessr.com/de/vgp/3154?gamemode=pin": false,
+        "https://www.geoguessr.com/de/fl/2007?gamemode=pin": false,
+        "https://www.geoguessr.com/de/vgp/3127?gamemode=pin": false,
+        "https://www.geoguessr.com/de/vgp/3163?gamemode=pin": false,
+        "https://www.geoguessr.com/de/fl/2003?gamemode=pin": false,
+        "https://www.geoguessr.com/de/vgp/3204?gamemode=pin": false,
+        "https://www.geoguessr.com/de/vgp/3167?gamemode=pin": false,
+        "https://www.geoguessr.com/de/fl/2006?gamemode=pin": false,
+        "https://www.geoguessr.com/de/vgp/3203?gamemode=pin": false,
+        "https://www.geoguessr.com/de/vgp/3341?gamemode=pin": false,
+        "https://www.geoguessr.com/de/fl/2018?gamemode=pin": false,
+        "https://www.geoguessr.com/de/vgp/3445?gamemode=pin": false,
+        "https://www.geoguessr.com/de/vgp/3003?gamemode=pin": false
       }
     }
   },
