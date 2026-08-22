@@ -6,8 +6,20 @@
   <base href="/brents-toasts/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LS3BPWCPLC"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    // send_page_view is off here because routing is hash-based (withHashLocation()) -
+    // AnalyticsService (see app/services/analytics.ts) sends every pageview, including
+    // the first, keyed off the Angular route instead of the one-time initial load.
+    gtag('config', 'G-LS3BPWCPLC', { send_page_view: false });
+  </script>
 <style>:root{--bg:#0f1115;--fg:#f2f3f5;--muted:#9aa0a8;--line:#262a31;--panel:#171a20;--input:#1d2129;--info:#28a6f5;--success:#4bb543;--warning:#dfb200;--error:#ff4433;--radius:10px;color-scheme:dark}*{box-sizing:border-box}html,body{margin:0;padding:0;background:var(--bg);color:var(--fg);font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif}</style><link rel="stylesheet" href="styles-55IWX7WQ.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="styles-55IWX7WQ.css"></noscript></head>
 <body>
   <app-root></app-root>
-<link rel="modulepreload" href="chunk-2NFLSA4Y.js"><script src="main-EHU23AUT.js" type="module"></script></body>
+<link rel="modulepreload" href="chunk-2NFLSA4Y.js"><script src="main-XXVBHUBN.js" type="module"></script></body>
 </html>
